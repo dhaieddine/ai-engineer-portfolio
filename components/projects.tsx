@@ -26,12 +26,12 @@ const projects = [
     link: "/projects/job-intelligent",
   },
   {
-    title: "Arabic Historical Manuscript Recognition",
+    title: "HomeSmart AI – Plateforme Intelligente de Recherche de Logement",
     description:
-      "OCR pipeline for recognizing ancient Arabic manuscripts using deep learning.",
-    image: "/projects/manuscript.jpg",
-    tags: ["OCR", "Deep Learning", "NLP"],
-    link: "#",
+      "Plateforme IA complète pour agrégation multi-plateforme, recommandation intelligente, prédiction ML des chances d'acceptation, génération PDF de dossiers et assistant IA conversationnel.",
+    image: "/projects/homesmart-ai.jpg",
+    tags: ["FastAPI", "React", "PostgreSQL", "Elasticsearch", "XGBoost"],
+    link: "/projects/homesmart-ai",
   },
 ]
 

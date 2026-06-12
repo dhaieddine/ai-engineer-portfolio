@@ -1,6 +1,6 @@
 import { siteLinks } from "@/lib/site-links"
 
-export type ProjectSlug = "medical-ai" | "job-intelligent"
+export type ProjectSlug = "medical-ai" | "job-intelligent" | "homesmart-ai"
 
 export interface ArchitectureStep {
   label: string
@@ -126,8 +126,8 @@ export const projectsData: Record<ProjectSlug, ProjectData> = {
       },
     ],
     gallery: [
-      { src: "/projects/medical-ai.jpg", caption: "Model architecture overview" },
-      { src: "/projects/medical-ai.jpg", caption: "Attention map visualization" },
+      { src: "/projects/medical-ai-architecture.jpg", caption: "Model architecture overview" },
+      { src: "/projects/medical-ai-attention-map.jpg", caption: "Attention map visualization" },
       { src: "/projects/medical-ai.jpg", caption: "Tkinter inference interface" },
     ],
     metrics: [
@@ -230,9 +230,8 @@ export const projectsData: Record<ProjectSlug, ProjectData> = {
       },
     ],
     gallery: [
-      { src: "/projects/job-intelligent.jpg", caption: "Streamlit analytics dashboard" },
-      { src: "/projects/job-intelligent.jpg", caption: "Salary distribution analysis" },
-      { src: "/projects/job-intelligent.jpg", caption: "Geographic job density map" },
+      { src: "/projects/job-intelligent-dashboard.PNG", caption: "Streamlit analytics dashboard" },
+      { src: "/projects/job-intelligent-inter.PNG", caption: "main interface" },
     ],
     metrics: [
       { label: "Jobs Collected", value: "15K", suffix: "+" },
@@ -259,6 +258,130 @@ export const projectsData: Record<ProjectSlug, ProjectData> = {
         { type: "keyword", text: "db.mongodb.insert_many(cleaned)" },
         { type: "plain", text: "" },
         { type: "string", text: ">>> 15,247 jobs indexed | 24 API routes live" },
+      ],
+    },
+  },
+  "homesmart-ai": {
+    slug: "homesmart-ai",
+    title: "HomeSmart AI – Plateforme Intelligente de Recherche de Logement",
+    subtitle:
+      "Plateforme IA pour agrégation, recommandation et automatisation de la recherche de logement en France.",
+    badge: "AI Platform · Data Engineering",
+    heroImage: "/projects/homesmart-ai.PNG",
+    tags: ["FastAPI", "React", "PostgreSQL", "Elasticsearch", "Machine Learning", "Docker", "Airflow"],
+    liveDemo: "#",
+    github: siteLinks.github,
+    accent: "cyan",
+    overview: {
+      goal:
+        "Construire une plateforme intelligente centralisée qui agrège automatiquement les annonces immobilières, recommande les logements les plus adaptés via l'IA, prédit les chances d'acceptation par machine learning, génère des dossiers locataires automatisés et fournit un assistant IA pour conseils personnalisés.",
+      problem:
+        "Les chercheurs de logement en France font face à la fragmentation entre multiples plateformes (LeBonCoin, SeLoger, PAP), manquent d'insights sur leur éligibilité, doivent préparer manuellement des dossiers complexes, et ne disposent pas de conseils intelligents pour optimiser leur candidature.",
+      why:
+        "Une plateforme centralisée utilisant web scraping, ETL pipelines, machine learning pour la prédiction et LLM pour l'assistance transforme le processus fragmenté en expérience fluide et guidée, augmentant les chances de trouver un logement.",
+      architecture:
+        "Le système intègre des scrapers et APIs pour l'agrégation, des pipelines ETL Apache Airflow pour le nettoyage et la déduplication, un moteur de recommandation IA avec scoring de compatibilité, un modèle ML XGBoost prédisant les chances d'acceptation, un générateur PDF automatisé pour les dossiers, et un assistant conversationnel basé sur LLM — le tout exposé via une API FastAPI et une interface React avec Elasticsearch pour la recherche ultra-rapide.",
+    },
+    architectureSteps: [
+      { label: "Web Scraping", description: "Agrégation multi-plateformes via Scrapy & Playwright" },
+      { label: "ETL Pipeline", description: "Apache Airflow : nettoyage, normalisation, déduplication" },
+      { label: "Elasticsearch", description: "Indexation haute-performance pour recherche rapide" },
+      { label: "ML Engine", description: "Scoring IA + prédiction XGBoost des chances" },
+      { label: "PDF Generation", description: "Création automatique de dossiers locataires" },
+      { label: "LLM Assistant", description: "Conseils et stratégie via OpenAI API" },
+    ],
+    technologies: [
+      { name: "FastAPI", iconId: "fastapi" },
+      { name: "React", iconId: "react" },
+      { name: "PostgreSQL", iconId: "postgresql" },
+      { name: "Elasticsearch", iconId: "elasticsearch" },
+      { name: "XGBoost", iconId: "brain" },
+      { name: "Scrapy", iconId: "globe" },
+      { name: "Docker", iconId: "docker" },
+      { name: "Apache Airflow", iconId: "layers" },
+      { name: "Redis", iconId: "redis" },
+      { name: "Python", iconId: "python" },
+    ],
+    features: [
+      {
+        title: "Agrégation Multi-Plateforme",
+        description:
+          "Collecte automatique des annonces via APIs et web scraping (Scrapy, Playwright) depuis LeBonCoin, SeLoger, PAP et autres plateformes.",
+      },
+      {
+        title: "Recommandation IA Personnalisée",
+        description:
+          "Analyse du profil utilisateur (budget, localisation, critères) et score de compatibilité pour chaque annonce avec classement intelligent.",
+      },
+      {
+        title: "Prédiction ML des Chances d'Acceptation",
+        description:
+          "Modèle XGBoost entraîné sur revenus, garant, statut professionnel, niveau de concurrence pour estimer la probabilité d'acceptation de candidature.",
+      },
+      {
+        title: "Génération Automatique de Dossier Locataire",
+        description:
+          "Compilation automatique des documents, création PDF professionnelle et génération de lettre de motivation par IA.",
+      },
+      {
+        title: "Assistant IA Conversationnel",
+        description:
+          "LLM (OpenAI API) fournissant conseils personnalisés, réponses administratives, stratégie de candidature et génération de contenu.",
+      },
+      {
+        title: "Moteur de Recherche Ultra-Rapide",
+        description:
+          "Elasticsearch pour indexation et recherche instantanée sur des milliers d'annonces avec filtres avancés et agrégations.",
+      },
+      {
+        title: "Notifications Temps Réel",
+        description:
+          "Alertes email, push mobile et tableaux de bord web pour nouvelles annonces correspondant aux critères de l'utilisateur.",
+      },
+      {
+        title: "Vérification Automatique des Aides",
+        description:
+          "Intégration avec API des aides au logement pour vérification instantanée de l'éligibilité utilisateur.",
+      },
+    ],
+    gallery: [
+      { src: "/projects/homesmart-ai-interface.png", caption: "Interface de recommandation des logements" },
+      { src: "/projects/homesmart-ai-bord.PNG", caption: "Tableau de bord d'analyse des chances" },
+      { src: "/projects/homesmart-ai-chatbot.PNG", caption: "Assistant IA pour conseils" },
+    ],
+    metrics: [
+      { label: "Annonces Agrégées", value: "50K", suffix: "+" },
+      { label: "Plateformes", value: "4", suffix: "+" },
+      { label: "API Endpoints", value: "32", suffix: "+" },
+      { label: "Temps Scraping", value: "15", suffix: " min" },
+      { label: "Accuracy ML", value: "87", suffix: "%" },
+      { label: "Régions Couvertes", value: "22", suffix: "+" },
+    ],
+    terminal: {
+      filename: "homesmart_pipeline.py",
+      lines: [
+        { type: "comment", text: "# HomeSmart AI — Pipeline Complet" },
+        { type: "plain", text: "" },
+        { type: "keyword", text: "# 1. Agrégation multi-plateforme" },
+        { type: "keyword", text: "listings = aggregate_listings(" },
+        { type: "indent", text: "sources=['leboncoin', 'seloger', 'pap']," },
+        { type: "indent", text: "regions=['IDF', 'Provence', 'Rhône-Alpes']" },
+        { type: "keyword", text: ")" },
+        { type: "plain", text: "" },
+        { type: "keyword", text: "# 2. ETL & nettoyage Airflow" },
+        { type: "keyword", text: "clean_listings = ETLPipeline.deduplicate(" },
+        { type: "indent", text: "normalize_prices=True," },
+        { type: "indent", text: "extract_features=True" },
+        { type: "keyword", text: ")" },
+        { type: "plain", text: "" },
+        { type: "keyword", text: "# 3. Recommandation IA + prédiction ML" },
+        { type: "keyword", text: "scored = recommend_listings(" },
+        { type: "indent", text: "user_profile=user," },
+        { type: "indent", text: "model='xgboost_acceptance_v2'," },
+        { type: "indent", text: "top_k=20" },
+        { type: "keyword", text: ")" },
+        { type: "plain", text: "" },
+        { type: "string", text: ">>> 52,847 annonces | 87% prédiction accuracy | Dossier PDF généré" },
       ],
     },
   },

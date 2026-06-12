@@ -75,12 +75,15 @@ const lineColors = {
 
 export function ProjectDetailPage({ project }: { project: ProjectData }) {
   const accent = accentStyles[project.accent]
-  const otherSlug =
-    project.slug === "medical-ai" ? "job-intelligent" : "medical-ai"
-  const otherTitle =
-    project.slug === "medical-ai"
-      ? "Job Intelligent Platform"
-      : "Medical AI System"
+  const projectTitles = {
+    "medical-ai": "Medical AI System",
+    "job-intelligent": "Job Intelligent Platform",
+    "homesmart-ai": "HomeSmart AI Platform",
+  }
+  const allSlugs = ["medical-ai", "job-intelligent", "homesmart-ai"] as const
+  const otherSlugs = allSlugs.filter((slug) => slug !== project.slug)
+  const otherSlug = otherSlugs[0]
+  const otherTitle = projectTitles[otherSlug]
 
   return (
     <main className="relative min-h-screen bg-[#0a0a0f] text-white overflow-hidden">
