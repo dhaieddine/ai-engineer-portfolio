@@ -267,7 +267,7 @@ export const projectsData: Record<ProjectSlug, ProjectData> = {
     subtitle:
       "Plateforme IA pour agrégation, recommandation et automatisation de la recherche de logement en France.",
     badge: "AI Platform · Data Engineering",
-    heroImage: "/projects/homesmart-ai.PNG",
+    heroImage: "/projects/homesmart-ai.png",
     tags: ["FastAPI", "React", "PostgreSQL", "Elasticsearch", "Machine Learning", "Docker", "Airflow"],
     liveDemo: "#",
     github: siteLinks.github,
