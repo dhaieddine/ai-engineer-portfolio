@@ -29,7 +29,7 @@ const projects = [
     title: "HomeSmart AI – Plateforme Intelligente de Recherche de Logement",
     description:
       "Plateforme IA complète pour agrégation multi-plateforme, recommandation intelligente, prédiction ML des chances d'acceptation, génération PDF de dossiers et assistant IA conversationnel.",
-    image: "/projects/homesmart-ai.PNG",
+    image: "/projects/homesmart-ai.png",
     tags: ["FastAPI", "React", "PostgreSQL", "Elasticsearch", "XGBoost"],
     link: "/projects/homesmart-ai",
   },

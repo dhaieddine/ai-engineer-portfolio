@@ -346,8 +346,8 @@ export const projectsData: Record<ProjectSlug, ProjectData> = {
     ],
     gallery: [
       { src: "/projects/homesmart-ai-interface.png", caption: "Interface de recommandation des logements" },
-      { src: "/projects/homesmart-ai-dashbord.PNG", caption: "Tableau de bord d'analyse des chances" },
-      { src: "/projects/homesmart-ai-chatbot.PNG", caption: "Assistant IA pour conseils" },
+      { src: "/projects/homesmart-ai-dashbord.png", caption: "Tableau de bord d'analyse des chances" },
+      { src: "/projects/homesmart-ai-chatbot.png", caption: "Assistant IA pour conseils" },
     ],
     metrics: [
       { label: "Annonces Agrégées", value: "50K", suffix: "+" },
